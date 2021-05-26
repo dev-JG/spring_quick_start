@@ -36,6 +36,7 @@ hs_err_pid*
 *.iws
 *.iml
 *.ipr
+classes
 target
 out/
 !**/src/main/**/out/
