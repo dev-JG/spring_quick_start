@@ -35,8 +35,11 @@ public class BoardRepositoryV2 {
 
     public boolean insertBoard(Board board) {
         Object[] params = {board.getTitle(), board.getWriter(), board.getContent()};
-        Object[] params2 = {5, board.getTitle(), board.getWriter(), board.getContent()};
-        jdbcTemplate.update(BOARD_LIST_INSERT, params);
-        return jdbcTemplate.update(BOARD_LIST_INSERT2, params2) > 0;
+        return jdbcTemplate.update(BOARD_LIST_INSERT, params) > 0;
+    }
+
+    public boolean insertBoardV2(Board board) {
+        Object[] params = {5, board.getTitle(), board.getWriter(), board.getContent()};
+        return jdbcTemplate.update(BOARD_LIST_INSERT2, params) > 0;
     }
 }

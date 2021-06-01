@@ -1,7 +1,7 @@
 package com.spring;
 
 import com.spring.board.model.Board;
-import com.spring.board.repository.BoardRepositoryV2;
+import com.spring.board.service.BoardService;
 import lombok.extern.log4j.Log4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -19,7 +19,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class BoardServiceTest {
 
     @Autowired
-    private BoardRepositoryV2 boardRepositoryV2;
+    private BoardService boardService;
 
     @Test
     public void 보드_조회_테스트() {
@@ -28,16 +28,26 @@ public class BoardServiceTest {
 
     @Test
     public void 게시글_조회_테스트() {
+        log.info("##### 게시글_조회_테스트");
         Board board = new Board();
         board.setBoardNo(1L);
-        Board result = boardRepositoryV2.getBoard(board);
-        log.info("##### 게시글_조회_테스트");
+        Board result = boardService.getBoard(board);
         log.info(result);
     }
 
     @Test
     public void 게시글_리스트_조회_테스트() {
         log.info("##### 게시글_리스트_조회_테스트");
-        log.info(boardRepositoryV2.getBoardList());
+        log.info(boardService.getBoardList());
+    }
+
+    @Test
+    public void 게시글_입력_테스트() {
+        log.info("##### 게시글_입력_테스트");
+        Board board = new Board();
+        board.setTitle("테스트용 제목입니다.");
+        board.setWriter("작성자입니다.");
+        board.setContent("게시글 내용입니다.");
+        log.info(boardService.insertBoard(board));
     }
 }

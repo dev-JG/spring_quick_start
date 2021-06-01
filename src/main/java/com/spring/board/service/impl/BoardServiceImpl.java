@@ -7,7 +7,6 @@ import com.spring.board.service.BoardService;
 import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -37,8 +36,8 @@ public class BoardServiceImpl implements BoardService {
     }
 
     @Override
-    @Transactional
     public boolean insertBoard(Board board) {
-        return boardRepositoryV2.insertBoard(board);
+        boardRepositoryV2.insertBoard(board);
+        return boardRepositoryV2.insertBoardV2(board);
     }
 }
