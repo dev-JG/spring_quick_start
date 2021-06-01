@@ -12,4 +12,16 @@ public class Board {
     private String content;
     private String createDt;
     private String updateDt;
+
+    @Override
+    public String toString() {
+        return "Board{" +
+                "boardNo=" + boardNo +
+                ", title='" + title + '\'' +
+                ", writer='" + writer + '\'' +
+                ", content='" + content + '\'' +
+                ", createDt='" + createDt + '\'' +
+                ", updateDt='" + updateDt + '\'' +
+                '}';
+    }
 }
