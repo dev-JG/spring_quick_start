@@ -22,21 +22,25 @@ public class BoardServiceImpl implements BoardService {
 
     @Override
     public Board getBoard(Board board) {
+        log.info("##### BoardService::getBoard");
         return boardRepository.getBoard(board);
     }
 
     @Override
     public Board getBoardV2(Board board) {
+        log.info("##### BoardService::getBoardV2");
         return boardRepositoryV2.getBoard(board);
     }
 
     @Override
     public List<Board> getBoardList() {
+        log.info("##### BoardService::getBoardList");
         return boardRepositoryV2.getBoardList();
     }
 
     @Override
     public boolean insertBoard(Board board) {
+        log.info("##### BoardService::insertBoard");
         boardRepositoryV2.insertBoard(board);
         return boardRepositoryV2.insertBoardV2(board);
     }

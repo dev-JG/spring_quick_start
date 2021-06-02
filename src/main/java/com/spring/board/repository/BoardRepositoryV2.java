@@ -25,20 +25,24 @@ public class BoardRepositoryV2 {
     private final String BOARD_LIST_INSERT2 = "insert into board(board_no, title, writer, content, create_dt) values(?,?, ?, ?, now())";
 
     public Board getBoard(Board board) {
+        log.info("##### BoardRepositoryV2::getBoard");
         Object[] params = {board.getBoardNo()};
         return jdbcTemplate.queryForObject(BOARD_GET, params, new BoardRowMapper());
     }
 
     public List<Board> getBoardList() {
+        log.info("##### BoardRepositoryV2::getBoardList");
         return jdbcTemplate.query(BOARD_LIST_GET, rowMapper);
     }
 
     public boolean insertBoard(Board board) {
+        log.info("##### BoardRepositoryV2::insertBoard");
         Object[] params = {board.getTitle(), board.getWriter(), board.getContent()};
         return jdbcTemplate.update(BOARD_LIST_INSERT, params) > 0;
     }
 
     public boolean insertBoardV2(Board board) {
+        log.info("##### BoardRepositoryV2::insertBoardV2");
         Object[] params = {5, board.getTitle(), board.getWriter(), board.getContent()};
         return jdbcTemplate.update(BOARD_LIST_INSERT2, params) > 0;
     }
