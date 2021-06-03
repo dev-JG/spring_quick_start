@@ -2,14 +2,14 @@ package com.spring.board.repository;
 
 import com.spring.board.model.Board;
 import com.spring.common.JdbcUtil;
-import lombok.extern.log4j.Log4j;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Repository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-@Log4j
+@Log4j2
 @Repository
 public class BoardRepository {
 

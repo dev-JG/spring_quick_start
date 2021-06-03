@@ -2,7 +2,7 @@ package com.spring.board.repository;
 
 import com.spring.board.model.Board;
 import com.spring.board.model.BoardRowMapper;
-import lombok.extern.log4j.Log4j;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Log4j
+@Log4j2
 @Repository
 public class BoardRepositoryV2 {
 

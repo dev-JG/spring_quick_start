@@ -2,14 +2,14 @@ package com.spring;
 
 import com.spring.board.model.Board;
 import com.spring.board.service.BoardService;
-import lombok.extern.log4j.Log4j;
+import lombok.extern.log4j.Log4j2;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-@Log4j
+@Log4j2
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:/spring/applicationContext-bean.xml",
         "classpath:/spring/applicationContext-database.xml",

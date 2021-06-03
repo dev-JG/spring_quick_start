@@ -4,13 +4,13 @@ import com.spring.board.model.Board;
 import com.spring.board.repository.BoardRepository;
 import com.spring.board.repository.BoardRepositoryV2;
 import com.spring.board.service.BoardService;
-import lombok.extern.log4j.Log4j;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Log4j
+@Log4j2
 @Service
 public class BoardServiceImpl implements BoardService {
 

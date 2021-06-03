@@ -1,6 +1,6 @@
 package com.spring.common;
 
-import lombok.extern.log4j.Log4j;
+import lombok.extern.log4j.Log4j2;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,7 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Objects;
 
-@Log4j
+@Log4j2
 public class JdbcUtil {
     public static Connection getConnection() {
         try {
