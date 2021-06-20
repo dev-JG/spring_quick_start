@@ -11,7 +11,7 @@ import java.util.List;
 
 @Log4j2
 @Repository
-public class BoardRepositoryV3 extends SqlSessionDaoSupport {
+public class MyBatisBoardRepository extends SqlSessionDaoSupport {
 
     @Autowired
     public void setSqlSessionFactory(SqlSessionFactory sqlSessionFactory) {

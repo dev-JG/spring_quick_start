@@ -7,8 +7,9 @@ import java.util.List;
 public interface BoardService {
     Board getBoard(Board board);
     Board getBoardV2(Board board);
-    Board getBoardV3(Board board);
+    Board getMyBatisBoard(Board board);
     List<Board> getBoardList();
-    List<Board> getBoardListV3();
+    List<Board> getMyBatisBoardList();
+    List<Board> getMyBatisBoardListV2();
     boolean insertBoard(Board board);
 }
