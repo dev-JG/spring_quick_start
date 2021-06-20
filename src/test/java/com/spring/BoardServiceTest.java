@@ -15,7 +15,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
         "classpath:/spring/applicationContext-database.xml",
         "classpath:/spring/applicationContext-transaction.xml",
         "classpath:/spring/applicationContext-aop.xml",
-        "classpath:mvc-config.xml"})
+        "classpath:mvc-config.xml",
+        "classpath:mybatis-config.xml"})
 public class BoardServiceTest {
 
     @Autowired
@@ -49,5 +50,19 @@ public class BoardServiceTest {
         board.setWriter("작성자입니다.");
         board.setContent("게시글 내용입니다.");
         log.info(boardService.insertBoard(board));
+    }
+
+    @Test
+    public void 마이바티스_게시글_한개_가져오기_테스트() {
+        log.info("##### 마이바티스_게시글_가져오기_테스트");
+        Board board = new Board();
+        board.setBoardNo(1L);
+        log.info(boardService.getBoardV3(board));
+    }
+
+    @Test
+    public void 마이바티스_게시글_리스트로_가져오기_테스트() {
+        log.info("##### 마이바티스_게시글_리스트로_가져오기_테스트");
+        log.info(boardService.getBoardListV3());
     }
 }

@@ -3,6 +3,7 @@ package com.spring.board.service.impl;
 import com.spring.board.model.Board;
 import com.spring.board.repository.BoardRepository;
 import com.spring.board.repository.BoardRepositoryV2;
+import com.spring.board.repository.BoardRepositoryV3;
 import com.spring.board.service.BoardService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,9 @@ public class BoardServiceImpl implements BoardService {
     @Autowired
     private BoardRepositoryV2 boardRepositoryV2;
 
+    @Autowired
+    private BoardRepositoryV3 boardRepositoryV3;
+
     @Override
     public Board getBoard(Board board) {
         log.info("##### BoardService::getBoard");
@@ -33,9 +37,21 @@ public class BoardServiceImpl implements BoardService {
     }
 
     @Override
+    public Board getBoardV3(Board board) {
+        log.info("##### BoardService::getBoardV3");
+        return boardRepositoryV3.getBoardByNo(board);
+    }
+
+    @Override
     public List<Board> getBoardList() {
         log.info("##### BoardService::getBoardList");
         return boardRepositoryV2.getBoardList();
+    }
+
+    @Override
+    public List<Board> getBoardListV3() {
+        log.info("##### BoardService::getBoardListV3");
+        return boardRepositoryV3.getBoardList();
     }
 
     @Override
